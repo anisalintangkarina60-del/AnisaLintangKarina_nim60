@@ -1,0 +1,39 @@
+class PegawaiParkir {
+    // Access Modifiers
+    private String nama;
+    private String idPegawai;
+    private int jamKerja;
+
+    public PegawaiParkir(String nama, String idPegawai, int jamKerja) {
+        // penggunaan this
+        this.nama = nama;
+        this.idPegawai = idPegawai;
+        this.jamKerja = jamKerja;
+    }
+
+    // menampilkan data
+    public void tampilData() {
+        System.out.println("Nama Pegawai   : " + nama);
+        System.out.println("ID Pegawai     : " + idPegawai);
+        System.out.println("Jam Kerja      : " + jamKerja + " jam");
+    }
+
+    // menghitung gaji
+    public int hitungGaji(int tarifPerJam) {
+        return this.jamKerja * tarifPerJam;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Membuat objek constructor
+        PegawaiParkir p1 = new PegawaiParkir("Andi", "PK001", 8);
+
+        // Menampilkan data
+        p1.tampilData();
+
+        // Menghitung gaji
+        int gaji = p1.hitungGaji(15000);
+        System.out.println("Gaji Hari Ini  : Rp " + gaji);
+    }
+}
